@@ -18,13 +18,14 @@ public class UserViewHolder extends BaseViewHolder {
     private TextView tvTel;
     private TextView tvFrom;
     private TextView tvTo;
-
+    private View item;
     public UserViewHolder(View itemView,RecyclerAdapter adapter) {
         super(itemView);
     }
 
     @Override
     protected void initViewHolder(View itemView, Object... obj) {
+        item=itemView;
         tvName= (TextView) itemView.findViewById(R.id.tv_name);
         tvTel= (TextView) itemView.findViewById(R.id.tv_tel);
         tvFrom= (TextView) itemView.findViewById(R.id.tv_from);
@@ -35,6 +36,8 @@ public class UserViewHolder extends BaseViewHolder {
     public void bindViewHolder(Context context, UserInfo info, View.OnClickListener listener) {
         tvName.setText("name:"+info.getName());
         tvTel.setText("tel:"+info.getTelNumber());
+        item.setOnClickListener(listener);
+        item.setTag(info);
     }
 
     @Override

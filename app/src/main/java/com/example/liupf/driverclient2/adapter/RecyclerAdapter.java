@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.liupf.driverclient2.App;
 import com.example.liupf.driverclient2.R;
 import com.example.liupf.driverclient2.bean.UserInfo;
 import com.example.liupf.driverclient2.viewholder.BaseViewHolder;
@@ -54,6 +55,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> implem
 
     @Override
     public void onClick(View v) {
-
+        UserInfo info= (UserInfo) v.getTag();
+        App.getInstance().showSnackMessage(v,info.getName());
     }
 }
