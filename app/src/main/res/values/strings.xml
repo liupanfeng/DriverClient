@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DriverClient2</string>
+    <string name="input_tel_number">请填写手机号</string>
+    <string name="input_name">请填写姓名</string>
+</resources>
