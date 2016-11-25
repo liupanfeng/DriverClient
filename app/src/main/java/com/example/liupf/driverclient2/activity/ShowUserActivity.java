@@ -11,7 +11,9 @@ import android.widget.TextView;
 import com.example.liupf.driverclient2.R;
 import com.example.liupf.driverclient2.activity.ResultActivity;
 import com.example.liupf.driverclient2.adapter.RecyclerAdapter;
+import com.example.liupf.driverclient2.bean.AnimationUtil;
 import com.example.liupf.driverclient2.bean.UserInfo;
+import com.example.liupf.driverclient2.recycler.ItemDivideDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,7 @@ public class ShowUserActivity extends AppCompatActivity implements View.OnClickL
 
         recycler.setAdapter(mAdapter);
         recycler.setLayoutManager(new LinearLayoutManager(this));
+        recycler.addItemDecoration(new ItemDivideDecoration(AnimationUtil.dip2px(this, 7), mAdapter));
     }
 
     @Override
