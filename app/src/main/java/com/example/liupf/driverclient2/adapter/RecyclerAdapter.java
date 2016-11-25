@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by liupf on 2016/11/23.
  */
-public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> implements View.OnClickListener {
 
     private Context mContext;
     private LayoutInflater mLayoutInflater;
@@ -44,11 +44,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-        holder.bindViewHolder(mContext,mList.get(position));
+        holder.bindViewHolder(mContext,mList.get(position),this);
     }
 
     @Override
     public int getItemCount() {
         return 3;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

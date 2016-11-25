@@ -28,8 +28,6 @@ public class ShowUserActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_user);
-        tv_lock_user = (TextView) findViewById(R.id.tv_lock_user);
-        tv_lock_user.setOnClickListener(this);
         recycler=(RecyclerView)findViewById(R.id.recycler);
         UserInfo userInfo=new UserInfo();
         userInfo.setName("lpf");
@@ -49,8 +47,8 @@ public class ShowUserActivity extends AppCompatActivity implements View.OnClickL
         mAdapter=new RecyclerAdapter(this,recycler,mList);
 
         recycler.setAdapter(mAdapter);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.addItemDecoration(new ItemDivideDecoration(AnimationUtil.dip2px(this, 7), mAdapter));
+        recycler.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override

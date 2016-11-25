@@ -33,7 +33,7 @@ public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
      * @param context
      * @param info
      */
-    public abstract void bindViewHolder(Context context, UserInfo info);
+    public abstract void bindViewHolder(Context context, UserInfo info, View.OnClickListener listener);
 
     /**
      * 处理Viewholder复用

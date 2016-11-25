@@ -16,6 +16,7 @@ public class ItemDivideDecoration extends BaseItemDecoration {
 
     @Override
     protected void handleItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state, int position) {
-        outRect.top=mSpace;
+        if (position < 0) return;
+        outRect.bottom=mSpace/7;
     }
 }

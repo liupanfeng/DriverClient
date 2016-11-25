@@ -31,17 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if ("".equals(et_input_tel.getText().toString().trim())){
-            App.getInstance().showSnackMessage(v, getString(R.string.input_tel_number));
-            return;
-        }
-        if ("".equals(et_input_name.getText().toString().trim())){
-            App.getInstance().showSnackMessage(v, getString(R.string.input_name));
-            return;
-        }
-
-        SPUtil.getInstant().save(SPUtil.TEL_NUMBER,et_input_tel.getText().toString().trim());
-        SPUtil.getInstant().save(SPUtil.USER_NAME,et_input_name.getText().toString().trim());
+//        if ("".equals(et_input_tel.getText().toString().trim())){
+//            App.getInstance().showSnackMessage(v, getString(R.string.input_tel_number));
+//            return;
+//        }
+//        if ("".equals(et_input_name.getText().toString().trim())){
+//            App.getInstance().showSnackMessage(v, getString(R.string.input_name));
+//            return;
+//        }
+//
+//        SPUtil.getInstant().save(SPUtil.TEL_NUMBER,et_input_tel.getText().toString().trim());
+//        SPUtil.getInstant().save(SPUtil.USER_NAME,et_input_name.getText().toString().trim());
         startActivity(new Intent(this, ShowUserActivity.class));
     }
 }

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.jikexxueyuan.driverclient.ShowUserActivity">
+    android:background="@color/app_bg_color"
+    >
 
 
-    <TextView
-        android:id="@+id/tv_lock_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="展示发出约车请求的用户，点击锁定用户"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
