@@ -20,7 +20,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance=this;
-        int a =1;
+        int m=0;
     }
 
     public void showToast(int id) {

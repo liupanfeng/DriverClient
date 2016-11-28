@@ -6,14 +6,13 @@ import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.example.liupf.driverclient2.listener.OnLocationCallBackListener;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import com.example.liupf.driverclient2.listener.OnLocationCallBackListener;
 
 /**
  * Created by lpf on 2016/11/25.
@@ -62,9 +61,7 @@ public class ChatService extends Service {
                     publishProgress("success");
                     String line;
                     while ((line = br.readLine()) != null) {
-                        //这里是接收到数据
                         publishProgress(line);
-
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -88,21 +85,6 @@ public class ChatService extends Service {
         read.execute();
     }
 
-
-    public void send(double longitude, double latitude) {
-        try {
-            if (!"".equals(latitude) && !"".equals(longitude)&&bw!=null) {
-                //为了显示测试效果 经纬度均加上一定的数值
-                latitude+=0.000530;
-                longitude+=0.000520;
-                bw.write(latitude+":"+longitude+"\n");
-                bw.flush();
-                Thread.sleep(2500);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 
     public class MyBinder extends Binder {
